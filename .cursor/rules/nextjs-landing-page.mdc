@@ -1,0 +1,60 @@
+---
+description: Next.js landing page – TypeScript, Tailwind v4, shadcn, SEO, clean code
+alwaysApply: true
+---
+
+# Next.js Landing Page Standards
+
+## Stack
+- **Next.js** (App Router), **TypeScript**, **Tailwind CSS v4**, **shadcn/ui**
+- Prefer App Router conventions: `app/` layout, `page.tsx`, `layout.tsx`, route segments.
+
+## TypeScript
+- Strict mode on. Type props and component APIs; avoid `any`.
+- Prefer `interface` for public shapes; use `type` for unions/utility types.
+- Colocate types next to components or in `types/` when shared.
+
+## Tailwind v4
+- Use Tailwind v4 syntax and config (e.g. `@import "tailwindcss"` where applicable).
+- Prefer utility classes; use `@layer` only when extending. No arbitrary values for one-offs that belong in design tokens.
+
+## shadcn
+- Use shadcn components from `components/ui/` as primitives; compose in feature/section components.
+- Don’t alter shadcn source; extend via props, wrappers, or Tailwind.
+- You can add components to your project (`bunx --bun shadcn@latest add <component name>`)
+
+
+## SEO
+- **Metadata**: Export `metadata` (and optionally `generateMetadata`) from `app/layout.tsx` and page-level `layout.tsx`/`page.tsx` (title, description, openGraph, twitter).
+- **Semantic HTML**: Use `<main>`, `<section>`, `<article>`, `<header>`, `<footer>`, heading hierarchy (`h1` → `h2` → `h3`).
+- **Performance**: Use next/image for images with `width`/`height` or `fill`; lazy-load below-the-fold.
+- **Structured data**: Add JSON-LD where relevant (e.g. Organization, WebPage) in layout or page.
+
+## Structure & Clean Code
+- **Routes**: One primary page under `app/`; sections as components in `components/sections/` or `components/` (e.g. Hero, Features, CTA).
+- **Components**: Small, single-purpose; props for configuration; no business logic in presentational components.
+- **Naming**: PascalCase components; camelCase functions/variables; kebab-case for files if project uses it, else PascalCase for components.
+- **Imports**: Absolute aliases (e.g. `@/components`) for clarity; group: React/Next → external → internal → types.
+- **No duplication**: Shared UI and copy in reusable components or constants.
+
+## Example (metadata + semantic section)
+
+```tsx
+// app/page.tsx
+import { Hero } from "@/components/sections/Hero";
+import { Features } from "@/components/sections/Features";
+
+export const metadata = {
+  title: "OfferOps – DevOps Interview War Room",
+  description: "30-day program to clear DevOps interviews.",
+};
+
+export default function HomePage() {
+  return (
+    <main>
+      <Hero />
+      <Features />
+    </main>
+  );
+}
+```
