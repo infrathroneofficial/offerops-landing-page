@@ -1,45 +1,51 @@
-import { Section } from "@/components/Section";
-import { SECTION_COPY, WHO_THIS_IS_FOR } from "@/config/site";
+"use client";
 
-const BENTO_LAYOUT = [
-  "md:col-span-2 md:row-span-1", // 0: wide
-  "md:col-span-1",               // 1
-  "md:col-span-1",               // 2
-  "md:col-span-1",               // 3
-  "md:col-span-1",               // 4
-  "md:col-span-3",               // 5: full width
+import { Section } from "@/components/Section";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
+import { SECTION_COPY, WHO_THIS_IS_FOR } from "@/config/site";
+import { ArrowRight } from "lucide-react";
+
+const GRID_AREAS = [
+  "md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]",
+  "md:[grid-area:1/7/2/13] xl:[grid-area:1/5/2/9]",
+  "md:[grid-area:2/1/3/7] xl:[grid-area:1/9/2/13]",
+  "md:[grid-area:2/7/3/13] xl:[grid-area:2/1/3/5]",
+  "md:[grid-area:3/1/4/7] xl:[grid-area:2/5/3/9]",
+  "md:[grid-area:3/7/4/13] xl:[grid-area:2/9/3/13]",
 ] as const;
 
-function PointCard({
-  index,
+function WhoThisIsForGridItem({
+  area,
   children,
-  className,
 }: {
-  index: number;
+  area: string;
   children: React.ReactNode;
-  className?: string;
 }) {
-  const num = String(index + 1).padStart(2, "0");
   return (
-    <article
-      className={`group card-hover relative overflow-hidden rounded-xl border border-slate-700/80 bg-slate-800/90 p-5 shadow-sm transition-all duration-200 hover:border-slate-600 hover:bg-slate-800 ${className ?? ""}`}
-    >
-      <div
-        className="absolute left-0 top-0 h-full w-1 bg-linear-to-b from-indigo-500/80 to-violet-500/50 opacity-80"
-        aria-hidden
-      />
-      <div className="flex items-start gap-4 pl-3">
-        <span
-          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-indigo-500/20 text-sm font-bold tabular-nums text-indigo-300 ring-1 ring-indigo-500/30 transition-colors group-hover:bg-indigo-500/30 group-hover:text-indigo-200"
-          aria-hidden
-        >
-          {num}
-        </span>
-        <p className="text-base leading-relaxed text-slate-200 md:text-lg">
-          {children}
-        </p>
+    <li className={`min-h-48 list-none md:min-h-56 ${area}`}>
+      <div className="relative h-full rounded-2xl border border-slate-700/80 p-2 md:rounded-3xl md:p-3">
+        <GlowingEffect
+          blur={0}
+          borderWidth={3}
+          spread={80}
+          glow
+          disabled={false}
+          proximity={64}
+          inactiveZone={0.01}
+          variant="indigo"
+        />
+        <div className="relative flex h-full flex-col justify-between gap-4 overflow-hidden rounded-xl border-0 bg-slate-800/95 p-5 shadow-[0px_0px_27px_0px_rgba(15,23,42,0.4)] md:p-6">
+          <div className="flex flex-1 flex-col justify-between gap-3">
+            <div className="w-fit rounded-lg border border-slate-600 bg-slate-700/50 p-2">
+              <ArrowRight className="h-4 w-4 text-indigo-400 md:h-5 md:w-5" />
+            </div>
+            <p className="font-sans text-base font-medium leading-relaxed text-white text-balance md:text-lg md:font-semibold">
+              {children}
+            </p>
+          </div>
+        </div>
       </div>
-    </article>
+    </li>
   );
 }
 
@@ -53,20 +59,17 @@ export function WhoThisIsFor() {
       motionVariant="slide-in"
       staggerChildren
     >
-      <h2 className="text-2xl md:text-3xl font-bold text-white">
+      <h2 className="text-2xl font-bold text-white md:text-3xl">
         {SECTION_COPY.whoTitle}
       </h2>
-      <p className="mt-3 text-lg md:text-base leading-relaxed text-slate-400">
+      <p className="mt-3 text-base leading-relaxed text-slate-400 md:text-lg">
         {SECTION_COPY.whoTagline}
       </p>
-      <ul
-        className="mt-8 grid list-none grid-cols-1 gap-4 sm:gap-5 md:grid-cols-3 md:gap-5"
-        aria-label="Audience segments"
-      >
+      <ul className="mt-8 grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 xl:max-h-144 xl:grid-rows-2">
         {WHO_THIS_IS_FOR.map((item, index) => (
-          <li key={item} className={BENTO_LAYOUT[index]}>
-            <PointCard index={index}>{item}</PointCard>
-          </li>
+          <WhoThisIsForGridItem key={item} area={GRID_AREAS[index]}>
+            {item}
+          </WhoThisIsForGridItem>
         ))}
       </ul>
     </Section>
