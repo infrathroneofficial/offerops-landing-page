@@ -1,0 +1,240 @@
+🔥 OfferOps: DevOps Interview War Room (30 Days)
+
+Clean. Memorable. Strong.
+
+⸻
+
+🎯 Who This Is For
+	•	DevOps engineers struggling to clear final rounds
+	•	Engineers stuck in same salary band
+	•	People getting interviews but no offers
+	•	People afraid of system design / Kubernetes deep dives
+	•	People with knowledge but no “production stories”
+	•	Engineers switching jobs after 1–2 years
+
+⸻
+
+🧠 Core Philosophy
+
+Most people fail interviews because:
+	•	They know tools
+	•	But can’t explain architecture
+	•	Can’t talk trade-offs
+	•	Can’t narrate production stories
+	•	Can’t handle scenario questions
+	•	CV doesn’t reflect impact
+
+We fix ALL of that.
+
+⸻
+
+🗓 30-Day Curriculum Structure
+
+⚔️ WEEK 1 – Foundation & Gap Exposure
+
+What Happens:
+	•	Resume deep audit (line by line)
+	•	LinkedIn & Naukri optimization session
+	•	Baseline technical evaluation
+	•	3 Mock Interviews (Mon/Wed/Fri)
+	•	Identify technical + storytelling gaps
+
+Topics Covered:
+	•	Linux deep debugging
+	•	Networking fundamentals
+	•	Docker internals
+	•	Kubernetes architecture basics
+	•	CI/CD pipelines
+	•	Cloud fundamentals
+
+Deliverables:
+	•	Optimized resume v1
+	•	Optimized LinkedIn
+	•	Gap report document
+	•	Personalized improvement roadmap
+
+⸻
+
+⚔️ WEEK 2 – Production Depth & Story Building
+
+What Happens:
+	•	3 Advanced Mock Interviews
+	•	Live sessions filling exact weak areas
+	•	STAR + RCA storytelling workshop
+	•	Incident simulation drills
+
+Topics Covered:
+	•	Kubernetes production failures
+	•	Terraform deep dive
+	•	CI/CD troubleshooting
+	•	Monitoring (Prometheus/Grafana)
+	•	Scaling & high availability
+	•	Cost optimization
+
+Special Focus:
+
+We convert your work experience into:
+
+✔ Production Stories
+✔ War-room incidents
+✔ Metrics-based achievements
+
+You leave with:
+	•	5 strong production stories
+	•	2 outage handling stories
+	•	1 cost optimization story
+	•	1 scaling story
+	•	1 security incident story
+
+⸻
+
+⚔️ WEEK 3 – Real Client Project Exposure
+
+This is the differentiator.
+
+What Happens:
+	•	Assigned real InfraThrone / Vybe Labs client tasks
+	•	Participate in live shadow sessions
+	•	Observe architecture discussions
+	•	Write documentation
+	•	Create runbooks
+
+You will:
+	•	Review actual CI/CD pipelines
+	•	See Kubernetes configs
+	•	See Terraform modules
+	•	See cost reports
+	•	See production architecture
+
+Deliverables:
+	•	Real PR contribution
+	•	Real architecture understanding
+	•	Real documentation piece for resume
+	•	Real metrics-based story
+
+⸻
+
+⚔️ WEEK 4 – Interview Domination Phase
+
+What Happens:
+	•	3 Final-level mock interviews
+	•	System design rounds
+	•	HR + behavioral mock
+	•	Salary negotiation session
+	•	Referral mapping
+
+Advanced Topics:
+	•	Kubernetes scaling scenarios
+	•	Multi-cloud architecture
+	•	DR design
+	•	Trade-off reasoning
+	•	Zero-downtime deployment strategies
+
+⸻
+
+🧩 What Makes This Different?
+
+❌ Not Just Q&A
+
+❌ Not Just Theory
+
+❌ Not Just Mock Calls
+
+✅ Real Production Stories
+
+✅ Real Client Exposure
+
+✅ CV Optimization
+
+✅ LinkedIn Positioning
+
+✅ Naukri Keyword Engineering
+
+✅ Referrals
+
+⸻
+
+📊 Weekly Structure
+	•	3 Mock Interviews per week
+	•	2 Deep-dive sessions
+	•	1 Resume / positioning session
+	•	1 Client shadow session
+	•	Daily task assignments
+	•	WhatsApp/Discord doubt support
+
+Total:
+	•	12+ Mock Interviews
+	•	8+ Technical deep dives
+	•	Real client exposure
+	•	Personalized resume engineering
+
+⸻
+
+📄 Resume Optimization Framework
+
+We convert:
+
+“Worked on Kubernetes”
+
+Into:
+
+“Led Intel → AMD node migration in production EKS cluster achieving 18% cost reduction with zero downtime using PDB-controlled drain strategy and Prometheus validation.”
+
+We train you to speak in:
+	•	Metrics
+	•	Impact
+	•	Trade-offs
+	•	Decisions
+	•	Risks
+
+⸻
+
+🔥 LinkedIn & Naukri Optimization
+
+We teach:
+	•	Headline engineering
+	•	Keyword stacking
+	•	Recruiter magnet positioning
+	•	Activity strategy
+	•	Profile SEO for DevOps
+
+⸻
+
+🤝 Referral Support
+	•	Access to internal hiring network
+	•	Direct referrals where possible
+	•	Interview scheduling assistance
+	•	Post-offer salary guidance
+
+⸻
+
+🎁 Final Outcome
+
+After 30 days you will have:
+
+✔ 12 Mock Interviews experience
+✔ Production-ready stories
+✔ Real client exposure
+✔ Resume that gets callbacks
+✔ LinkedIn optimized for recruiters
+✔ Confidence in scenario rounds
+✔ Referral support
+
+⸻
+
+📈 Target Result
+	•	2–4x increase in interview calls
+	•	Clear final rounds confidently
+	•	Salary jump (20–70%)
+
+⸻
+
+💎 Positioning Line for Website
+
+“Knowledge gets interviews.
+Production stories get offers.”
+
+or
+
+“We don’t prepare you for interviews.
+We prepare you to win them.”
