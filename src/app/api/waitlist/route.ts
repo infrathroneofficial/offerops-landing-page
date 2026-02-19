@@ -5,13 +5,13 @@ const AIRTABLE_API_URL = "https://api.airtable.com/v0";
 export async function POST(request: NextRequest) {
   const apiKey = process.env.AIRTABLE_API_KEY;
   const baseId = process.env.AIRTABLE_BASE_ID;
-  const tableName = process.env.AIRTABLE_TABLE_NAME ?? "Waitlist";
-  const emailField = process.env.AIRTABLE_EMAIL_FIELD ?? "Email";
+  const tableName = process.env.AIRTABLE_TABLE_NAME;
+  const emailField = process.env.AIRTABLE_EMAIL_FIELD;
 
-  if (!apiKey || !baseId) {
+  if (!apiKey || !baseId || !tableName || !emailField) {
     return NextResponse.json(
-      { error: "Waitlist is not configured." },
-      { status: 503 }
+      { error: "Airtable configuration is not set." },
+      { status: 503 },
     );
   }
 

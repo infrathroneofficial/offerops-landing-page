@@ -100,6 +100,11 @@
   h3,
   h4 {
     font-family: var(--font-heading), var(--font-sans), sans-serif;
+    letter-spacing: -0.02em;
+  }
+  .text-display {
+    font-family: var(--font-heading), var(--font-sans), sans-serif;
+    letter-spacing: -0.03em;
   }
 }
 
@@ -109,6 +114,8 @@
   --color-primary-hover: #818cf8;
   --color-surface: #1e293b;
   --color-surface-alt: #334155;
+  --color-accent-premium: #f59e0b;
+  --color-accent-premium-muted: rgb(245 158 11 / 0.7);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -220,6 +227,10 @@
     opacity: 1 !important;
     filter: none !important;
   }
+}
+
+.cta-primary:focus-visible {
+  --tw-ring-offset-color: var(--background);
 }
 
 /* Card hover: lift + shadow */

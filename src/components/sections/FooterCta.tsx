@@ -21,14 +21,17 @@ export function FooterCta() {
       />
 
       <footer className="relative z-10">
-        <h2 className="text-2xl md:text-3xl font-bold leading-tight">
+        <h2 className="text-display text-2xl font-bold leading-tight text-white md:text-3xl lg:text-4xl">
           Knowledge gets interviews. Production stories get offers.
         </h2>
         <p className="mt-4 text-lg md:text-base leading-relaxed text-slate-300">
           {SITE_CONFIG.footerCtaSubtext}
         </p>
         <p className="mt-2 text-sm text-slate-400">{SITE_CONFIG.footerCtaOptionalLine}</p>
-        <div className="mt-8 w-full max-w-xl">
+        <p className="mt-6 text-sm font-medium text-amber-400/90">
+          {SITE_CONFIG.seatsRemaining}
+        </p>
+        <div className="mt-4 w-full max-w-xl">
           <WaitlistForm
             buttonLabel={SITE_CONFIG.ctaText}
             variant="footer"

@@ -1,24 +1,12 @@
 import { Section } from "@/components/Section"
-import { INSTRUCTOR, SECTION_COPY, TESTIMONIALS } from "@/config/site"
+import { CountUp } from "@/components/motion/CountUp"
+import { GlowingEffect } from "@/components/ui/glowing-effect"
+import { SECTION_COPY, STANDOUT_QUOTE, TESTIMONIALS } from "@/config/site"
 
-const proofCards = [
-  {
-    title: "Resume transformation",
-    description:
-      "Led Intel → AMD node migration in production EKS cluster achieving 18% cost reduction with zero downtime using PDB-controlled drain strategy and Prometheus validation.",
-    metric: null,
-  },
-  {
-    title: "Interview and salary outcomes",
-    description: "2–4x increase in interview calls. Salary jump (20–70%).",
-    metric: "2–4x · 20–70%",
-  },
-  {
-    title: "Metrics-first storytelling",
-    description:
-      "You train to speak in metrics, impact, trade-offs, decisions, and risks — not generic tool lists.",
-    metric: null,
-  },
+const PROOF_STATS = [
+  { value: <CountUp to={4} suffix="x" />, label: "More callbacks" },
+  { value: "20–70%", label: "Salary jump" },
+  { value: <CountUp to={12} suffix="" />, label: "Mocks in 30 days" },
 ] as const
 
 const logos = ["Google", "Amazon", "Microsoft", "Stripe"]
@@ -33,62 +21,84 @@ export function ProofBlock() {
       motionVariant="fade-up"
       staggerChildren
     >
-      <h2 className="text-2xl md:text-3xl font-bold text-white">Real results</h2>
-      <p className="mt-3 text-lg md:text-base leading-relaxed text-slate-400">
-        {SECTION_COPY.proofSectionContext}
-      </p>
-      <div className="mt-8 grid gap-6 md:grid-cols-3">
-        {proofCards.map((card) => (
-          <article
-            key={card.title}
-            className={`card-hover rounded-xl border p-6 shadow-sm ${
-              card.metric
-                ? "border-indigo-700 bg-linear-to-br from-slate-800 to-indigo-950/50"
-                : "border-slate-700 bg-slate-800"
-            }`}
+      <h2 className="text-display text-2xl font-bold text-white md:text-3xl">
+        Real results
+      </h2>
+
+      <div className="mt-8 grid grid-cols-3 gap-4 md:gap-6">
+        {PROOF_STATS.map((stat) => (
+          <div
+            key={stat.label}
+            className="relative overflow-hidden rounded-xl border border-indigo-700/50 p-2 md:rounded-2xl md:p-2"
           >
-            <h3 className="text-lg font-semibold text-white">{card.title}</h3>
-            {card.metric ? (
-              <p className="mt-2 text-2xl font-semibold tracking-tight text-indigo-400">{card.metric}</p>
-            ) : null}
-            <p className="mt-3 text-lg md:text-base leading-relaxed text-slate-300">
-              {card.description}
-            </p>
-          </article>
+            <GlowingEffect
+              blur={0}
+              borderWidth={2}
+              spread={50}
+              glow
+              disabled={false}
+              proximity={48}
+              inactiveZone={0.05}
+              variant="indigo"
+            />
+            <div className="relative rounded-lg border-0 bg-linear-to-br from-slate-800 to-indigo-950/40 px-4 py-5 text-center shadow-[0px_0px_20px_0px_rgba(15,23,42,0.25)] md:px-6 md:py-6">
+              <p className="text-3xl font-bold text-white md:text-4xl">{stat.value}</p>
+              <p className="mt-1 text-xs font-medium uppercase tracking-wider text-slate-400">
+                {stat.label}
+              </p>
+            </div>
+          </div>
         ))}
       </div>
-      <div className="mt-8 grid gap-4 md:grid-cols-2">
+
+      <blockquote className="mt-10 rounded-2xl border border-indigo-700 bg-linear-to-br from-slate-800 to-indigo-950/50 p-6 text-center md:p-8">
+        <p className="text-xl font-semibold leading-relaxed text-white md:text-2xl">
+          &ldquo;{STANDOUT_QUOTE.quote}&rdquo;
+        </p>
+        <footer className="mt-3 text-sm font-medium uppercase tracking-wider text-indigo-300">
+          {STANDOUT_QUOTE.attribution}
+        </footer>
+      </blockquote>
+
+      <div className="mt-10 grid gap-4 md:grid-cols-2">
         {TESTIMONIALS.map((testimonial) => (
-          <article
+          <div
             key={testimonial.name}
-            className="rounded-xl border border-slate-700 bg-slate-800 p-5 shadow-sm"
+            className="relative overflow-hidden rounded-xl border border-slate-700/80 p-2 md:rounded-2xl md:p-2"
           >
-            <p className="text-lg md:text-base leading-relaxed text-slate-300">"{testimonial.quote}"</p>
-            <p className="mt-3 text-sm font-semibold text-white">{testimonial.name}</p>
-            <p className="text-sm text-slate-400">{testimonial.role}</p>
-          </article>
+            <GlowingEffect
+              blur={0}
+              borderWidth={2}
+              spread={60}
+              glow
+              disabled={false}
+              proximity={56}
+              inactiveZone={0.03}
+              variant="indigo"
+            />
+            <article className="relative rounded-lg border-0 bg-slate-800 p-5 shadow-[0px_0px_20px_0px_rgba(15,23,42,0.25)] md:p-5">
+              <p className="text-base leading-relaxed text-slate-300 md:text-lg">
+                &ldquo;{testimonial.quote}&rdquo;
+              </p>
+              <p className="mt-3 text-sm font-semibold text-white">{testimonial.name}</p>
+              <p className="text-sm text-slate-400">{testimonial.role}</p>
+            </article>
+          </div>
         ))}
       </div>
-      <p className="mt-8 text-sm font-medium uppercase tracking-[0.12em] text-slate-400">
+
+      <p className="mt-10 text-sm font-medium uppercase tracking-[0.12em] text-slate-400">
         {SECTION_COPY.logoStripLabel}
       </p>
-      <div className="mt-10 flex flex-wrap gap-3 text-sm text-slate-400">
+      <div className="mt-4 flex flex-wrap gap-3 text-sm text-slate-400">
         {logos.map((logo) => (
           <span
             key={logo}
-            className="rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 shadow-sm"
+            className="rounded-lg border border-slate-700 bg-slate-800 px-3 py-2"
           >
             {logo}
           </span>
         ))}
-      </div>
-      <div className="mt-8 rounded-xl border border-indigo-700 bg-linear-to-r from-slate-800 to-indigo-950/60 p-5">
-        <p className="text-sm font-semibold uppercase tracking-[0.12em] text-indigo-300">
-          Who runs the War Room
-        </p>
-        <p className="mt-2 text-base leading-relaxed text-slate-300">
-          <span className="font-semibold text-white">{INSTRUCTOR.name}</span>: {INSTRUCTOR.tagline}
-        </p>
       </div>
     </Section>
   )

@@ -77,9 +77,12 @@ export function Section({
       <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-8 lg:px-12 py-20 md:py-24">
         <AnimatedSection variant={motionVariant} staggerChildren={staggerChildren}>
           {label ? (
-            <p className="mb-4 text-xs font-medium uppercase tracking-widest text-slate-400">
-              {label}
-            </p>
+            <div className="mb-6 flex items-center gap-3">
+              <span className="h-px w-8 bg-indigo-500/60" aria-hidden />
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
+                {label}
+              </p>
+            </div>
           ) : null}
           {children}
         </AnimatedSection>
