@@ -249,3 +249,94 @@
 .cta-primary:hover {
   @apply scale-[1.02];
 }
+
+/* ── Hero aurora (flowing shader) ───────────────────────────── */
+.hero-aurora-streak {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  will-change: transform;
+}
+
+/* Large soft blobs – positioned so they sit in view and move */
+.hero-aurora-streak-1 {
+  width: min(90vw, 600px);
+  height: min(90vw, 600px);
+  top: -15%;
+  right: -10%;
+  background: radial-gradient(
+    circle,
+    rgb(99 102 241 / 0.35) 0%,
+    rgb(129 140 248 / 0.2) 40%,
+    transparent 70%
+  );
+  animation: auroraFlow1 14s ease-in-out infinite;
+}
+
+.hero-aurora-streak-2 {
+  width: min(80vw, 500px);
+  height: min(80vw, 500px);
+  bottom: -20%;
+  left: -15%;
+  background: radial-gradient(
+    circle,
+    rgb(139 92 246 / 0.3) 0%,
+    rgb(167 139 250 / 0.18) 45%,
+    transparent 70%
+  );
+  animation: auroraFlow2 18s ease-in-out infinite;
+}
+
+.hero-aurora-streak-3 {
+  width: min(70vw, 400px);
+  height: min(70vw, 400px);
+  top: 30%;
+  left: -5%;
+  background: radial-gradient(
+    circle,
+    rgb(99 102 241 / 0.25) 0%,
+    rgb(139 92 246 / 0.12) 50%,
+    transparent 70%
+  );
+  animation: auroraFlow3 16s ease-in-out infinite;
+}
+
+.hero-aurora-streak-4 {
+  width: min(60vw, 350px);
+  height: min(60vw, 350px);
+  bottom: 10%;
+  right: 5%;
+  background: radial-gradient(
+    circle,
+    rgb(245 158 11 / 0.12) 0%,
+    rgb(251 191 36 / 0.08) 50%,
+    transparent 70%
+  );
+  animation: auroraFlow4 20s ease-in-out infinite;
+}
+
+@keyframes auroraFlow1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(-5%, 8%) scale(1.08); }
+}
+
+@keyframes auroraFlow2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(6%, -6%) scale(1.1); }
+}
+
+@keyframes auroraFlow3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(4%, 4%) scale(1.06); }
+}
+
+@keyframes auroraFlow4 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(-4%, -3%) scale(1.05); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-aurora-streak {
+    animation: none !important;
+  }
+}
