@@ -31,6 +31,8 @@ type SectionProps = {
   motionVariant?: "fade-up" | "scale-in" | "slide-in"
   staggerChildren?: boolean
   ambientOrbs?: AmbientOrbConfig[]
+  /** Rendered at the section level (behind content, above orbs). */
+  backgroundOverlay?: React.ReactNode
 }
 
 export function Section({
@@ -43,6 +45,7 @@ export function Section({
   motionVariant = "fade-up",
   staggerChildren = false,
   ambientOrbs,
+  backgroundOverlay,
 }: SectionProps) {
   const hasOrbs = ambientOrbs != null && ambientOrbs.length > 0
 
@@ -51,11 +54,12 @@ export function Section({
       id={id}
       className={cn(
         backgroundClassName,
-        hasOrbs && "relative overflow-hidden",
+        (hasOrbs || backgroundOverlay) && "relative overflow-hidden",
         noBorder ? "" : "border-t border-slate-700/60",
         className
       )}
     >
+      {backgroundOverlay}
       {hasOrbs && (
         <div aria-hidden className="pointer-events-none absolute inset-0">
           {ambientOrbs.map((orb, i) => {
@@ -77,9 +81,12 @@ export function Section({
       <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-8 lg:px-12 py-20 md:py-24">
         <AnimatedSection variant={motionVariant} staggerChildren={staggerChildren}>
           {label ? (
-            <p className="mb-4 text-xs font-medium uppercase tracking-widest text-slate-400">
-              {label}
-            </p>
+            <div className="mb-6 flex items-center gap-3">
+              <span className="h-px w-8 bg-indigo-500/60" aria-hidden />
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
+                {label}
+              </p>
+            </div>
           ) : null}
           {children}
         </AnimatedSection>

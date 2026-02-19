@@ -59,8 +59,8 @@ export function WhoThisIsFor() {
       motionVariant="slide-in"
       staggerChildren
     >
-      <h2 className="text-2xl font-bold text-white md:text-3xl">
-        {SECTION_COPY.whoTitle}
+      <h2 className="text-display text-2xl font-bold text-white md:text-3xl">
+        {SECTION_COPY.whoHeadline}
       </h2>
       <p className="mt-3 text-base leading-relaxed text-slate-400 md:text-lg">
         {SECTION_COPY.whoTagline}

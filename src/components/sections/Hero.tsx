@@ -1,8 +1,16 @@
-import type { ReactNode } from "react"
-import { Section } from "@/components/Section"
-import { CountUp } from "@/components/motion/CountUp"
-import { Button } from "@/components/ui/button"
-import { HERO_METRICS, SITE_CONFIG } from "@/config/site"
+import { HeroAurora } from "@/components/HeroAurora";
+import { Section } from "@/components/Section";
+import { CountUp } from "@/components/motion/CountUp";
+import { Button } from "@/components/ui/button";
+import { HERO_METRICS, SITE_CONFIG } from "@/config/site";
+import { BarChart3, Target, Zap } from "lucide-react";
+import type { ReactNode } from "react";
+
+const HERO_PILLS = [
+  { label: "12 Mocks", icon: Zap },
+  { label: "Real client exposure", icon: Target },
+  { label: "Resume that converts", icon: BarChart3 },
+] as const;
 
 export function Hero() {
   return (
@@ -10,9 +18,10 @@ export function Hero() {
       id="hero"
       noBorder
       className="relative min-h-[92vh] flex items-center overflow-hidden"
-      backgroundClassName="bg-gradient-to-b from-slate-950 via-slate-900/90 to-slate-800/80"
+      backgroundClassName="bg-linear-to-b from-slate-950 via-slate-900/90 to-slate-800/80"
       motionVariant="scale-in"
       staggerChildren
+      backgroundOverlay={<HeroAurora />}
     >
       <div
         aria-hidden
@@ -27,48 +36,67 @@ export function Hero() {
         <span className="inline-block rounded-full border border-indigo-500/50 bg-indigo-950/60 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-indigo-300">
           {SITE_CONFIG.heroBadge}
         </span>
-        <h1 className="mt-6 text-3xl md:text-6xl font-bold leading-tight tracking-tight text-white text-balance">
-          Production stories get offers.
+        <h1 className="mt-6 text-display text-4xl font-bold leading-[1.1] tracking-tight text-white text-balance md:text-6xl lg:text-7xl">
+          <span className="text-amber-400">Production stories</span> get offers.
         </h1>
-        <p className="mx-auto mt-6 max-w-2xl text-lg md:text-base leading-relaxed text-slate-300">
+        <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-300 md:text-xl">
           {SITE_CONFIG.heroSubtext}
         </p>
-        <p className="mx-auto mt-3 max-w-2xl text-base leading-relaxed text-slate-400">
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-2">
+          {HERO_PILLS.map(({ label, icon: Icon }) => (
+            <span
+              key={label}
+              className="flex items-center gap-2 rounded-full bg-slate-800/90 px-4 py-1.5 text-sm font-medium text-slate-200 ring-1 ring-slate-600/80"
+            >
+              <Icon className="h-4 w-4 text-amber-400/90" aria-hidden />
+              {label}
+            </span>
+          ))}
+        </div>
+        <p className="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-slate-500">
           {SITE_CONFIG.heroEmpathy}
         </p>
-        <p className="mx-auto mt-2 max-w-2xl text-sm leading-relaxed text-slate-500">
-          {SITE_CONFIG.heroConfidence}
-        </p>
 
-        <div className="mx-auto mt-8 grid max-w-xl grid-cols-3 gap-3 rounded-xl border border-slate-700 bg-slate-800/80 p-3 shadow-sm backdrop-blur">
-          <Metric label={HERO_METRICS.mocks} value={<CountUp to={12} suffix="+" />} />
-          <Metric label={HERO_METRICS.interviewCalls} value={<CountUp to={4} suffix="x" />} />
-          <Metric label={HERO_METRICS.salaryJump} value={<CountUp to={70} suffix="%" />} />
+        <div className="mx-auto mt-10 grid max-w-2xl grid-cols-3 gap-4 rounded-2xl border border-slate-700/80 bg-slate-800/70 p-4 shadow-xl backdrop-blur md:gap-6 md:p-5">
+          <Metric
+            label={HERO_METRICS.mocks}
+            value={<CountUp to={12} suffix="+" />}
+          />
+          <Metric
+            label={HERO_METRICS.interviewCalls}
+            value={<CountUp to={4} suffix="x" />}
+          />
+          <Metric
+            label={HERO_METRICS.salaryJump}
+            value={<CountUp to={70} suffix="%" />}
+          />
         </div>
 
-        <div className="mt-8">
+        <div className="mt-10">
           <Button
             asChild
             variant="primary"
             size="lg"
-            className="cta-primary min-h-[48px] rounded-xl px-8 py-4 text-lg font-semibold"
+            className="cta-primary min-h-[52px] rounded-xl px-10 py-4 text-lg font-semibold"
           >
             <a href="#cta">{SITE_CONFIG.ctaText}</a>
           </Button>
         </div>
-        <p className="mt-4 text-sm text-slate-400">
-          30 days. Next cohort {SITE_CONFIG.cohortDate}
+        <p className="mt-5 text-sm text-slate-400">
+          30 days · Next cohort {SITE_CONFIG.cohortDate}
         </p>
       </header>
     </Section>
-  )
+  );
 }
 
 function Metric({ label, value }: { label: string; value: ReactNode }) {
   return (
-    <div className="rounded-lg bg-slate-800 px-3 py-3 text-center shadow-sm ring-1 ring-slate-600/70">
-      <p className="text-xl font-semibold text-white">{value}</p>
-      <p className="mt-1 text-xs uppercase tracking-wider text-slate-400">{label}</p>
+    <div className="rounded-xl bg-slate-800/90 px-4 py-4 text-center ring-1 ring-slate-600/70 md:py-5">
+      <p className="text-3xl font-bold text-white md:text-4xl">{value}</p>
+      <p className="mt-1.5 text-xs font-medium uppercase tracking-wider text-slate-400">
+        {label}
+      </p>
     </div>
-  )
+  );
 }
