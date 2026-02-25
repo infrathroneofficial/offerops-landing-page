@@ -2,6 +2,7 @@ import { CountdownTimer } from "@/components/CountdownTimer"
 import { Section } from "@/components/Section"
 import { WaitlistForm } from "@/components/WaitlistForm"
 import { SITE_CONFIG } from "@/config/site"
+import { Button } from "../ui/button";
 
 export function FooterCta() {
   return (
@@ -29,24 +30,34 @@ export function FooterCta() {
         <p className="mt-4 text-lg md:text-base leading-relaxed text-slate-300">
           {SITE_CONFIG.footerCtaSubtext}
         </p>
-        <p className="mt-2 text-sm text-slate-400">{SITE_CONFIG.footerCtaOptionalLine}</p>
+        <p className="mt-2 text-sm text-slate-400">
+          {SITE_CONFIG.footerCtaOptionalLine}
+        </p>
 
         <div className="mt-6 flex flex-col items-start gap-2">
           <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-            Cohort starts in
+            Early Bird Discount ends in
           </p>
           <CountdownTimer targetDate={SITE_CONFIG.cohortStartDate} />
         </div>
 
         <div className="mt-6 w-full max-w-xl">
-          <WaitlistForm
-            buttonLabel={SITE_CONFIG.ctaText}
-            variant="footer"
-            className="space-y-4 [&_label]:text-white [&_input]:bg-slate-800 [&_input]:border-slate-600 [&_input]:text-white [&_input]:placeholder:text-slate-400 [&_p]:text-slate-300"
-          />
-          <p className="mt-3 text-xs leading-relaxed text-slate-400">{SITE_CONFIG.formReassurance}</p>
+          <Button
+            type="submit"
+            variant="primary"
+            size="lg"
+            className="h-14 min-h-[56px] w-full rounded-xl bg-linear-to-r from-indigo-600 to-violet-600 text-base font-semibold text-white shadow-lg shadow-indigo-500/25 hover:from-indigo-500 hover:to-violet-500"
+          >
+            <a
+              href={SITE_CONFIG.ctaLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {SITE_CONFIG.ctaText}
+            </a>
+          </Button>
         </div>
       </footer>
     </Section>
-  )
+  );
 }

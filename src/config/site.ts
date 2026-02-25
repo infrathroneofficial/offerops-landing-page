@@ -143,21 +143,21 @@ export const STANDOUT_QUOTE = {
 
 export const INSTRUCTOR = {
   name: "Saurav Chaudhary",
-  title: "War Room Architect",
+  title: "Elite DevOps Architect & War Room Commander",
   imageUrl: "/SauravChaudhary.jpeg",
   tagline:
-    "Leads InfraThrone's strategy, curriculum, and consulting. Has scaled infra for fast-growing startups and built teams that thrive under pressure.",
+    "Highly regarded for his impactful mentorship in DevOps, making complex topics accessible and fostering confidence among learners.",
   stats: ["Production systems", "Interview coaching", "Resume & storytelling"],
   skills: [
-    "Interview coaching",
-    "Production stories",
-    "Resume optimization",
-    "STAR/RCA framing",
+    "Expert Interview Coaching",
+    "Production Storytelling Mastery",
+    "Resume Optimization & LinkedIn Enhancement",
+    "STAR & RCA Framework Implementation",
   ],
   victories: [
-    "Trained engineers who cleared final rounds",
-    "Resume and LinkedIn optimization at scale",
-    "Real client exposure integration",
+    "Engineers who transformed from 'explain your biggest outage' panic to confident storytellers",
+    "CVs that convert interviews into offers",
+    "LinkedIn profiles that land more callbacks",
   ],
   socials: {
     linkedin: "https://www.linkedin.com/in/sauravstwt/",
