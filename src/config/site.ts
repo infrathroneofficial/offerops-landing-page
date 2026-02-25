@@ -1,4 +1,8 @@
-const siteUrl = "/";
+const siteUrl =
+  typeof process.env.NEXT_PUBLIC_SITE_URL === "string" &&
+  process.env.NEXT_PUBLIC_SITE_URL.length > 0
+    ? process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, "")
+    : "https://offerops.infrathrone.com";
 
 export const SITE_CONFIG = {
   name: "OfferOps",
