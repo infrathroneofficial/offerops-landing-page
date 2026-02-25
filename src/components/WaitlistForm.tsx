@@ -9,8 +9,8 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
 const waitlistSchema = z.object({
-  email: z.string().trim().email("Enter a valid work email"),
-})
+  email: z.string().trim().email("Enter a valid email"),
+});
 
 type WaitlistFormValues = z.infer<typeof waitlistSchema>
 
@@ -64,7 +64,7 @@ export function WaitlistForm({
     >
       <div className="space-y-2">
         <Label htmlFor="email" className="text-sm font-medium">
-          Work email
+          Email address
         </Label>
         <Input
           id="email"
@@ -76,7 +76,9 @@ export function WaitlistForm({
           {...form.register("email")}
         />
         {form.formState.errors.email ? (
-          <p className="text-sm font-medium text-red-400">{form.formState.errors.email.message}</p>
+          <p className="text-sm font-medium text-red-400">
+            {form.formState.errors.email.message}
+          </p>
         ) : null}
       </div>
 
@@ -105,5 +107,5 @@ export function WaitlistForm({
         </p>
       ) : null}
     </form>
-  )
+  );
 }

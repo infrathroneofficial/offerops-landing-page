@@ -13,10 +13,10 @@ export function CoreProblem() {
     <Section
       id="problem"
       label="The problem"
-      backgroundClassName="bg-slate-900/80"
       ambientOrbs={[{ position: "bottom-left" }]}
       motionVariant="fade-up"
       staggerChildren
+      spacing="default"
     >
       <h2 className="text-display text-2xl font-bold text-white md:text-3xl">
         {SECTION_COPY.problemTitle}
@@ -40,16 +40,16 @@ export function CoreProblem() {
           </ul>
         </div>
         <div className="relative overflow-hidden rounded-xl border border-slate-700/80 p-2 md:rounded-2xl md:p-2">
-          <GlowingEffect
-            blur={0}
-            borderWidth={2}
-            spread={60}
-            glow
-            disabled={false}
-            proximity={56}
-            inactiveZone={0.05}
-            variant="indigo"
-          />
+        <GlowingEffect
+          blur={0}
+          borderWidth={2}
+          spread={60}
+          glow
+          disabled={false}
+          proximity={56}
+          inactiveZone={0.05}
+          variant="amber"
+        />
           <div className="relative rounded-lg border-0 bg-slate-800/80 p-6 shadow-[0px_0px_20px_0px_rgba(15,23,42,0.3)]">
           <div className="flex items-center gap-3">
             <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-amber-500/20 text-amber-400">
@@ -69,7 +69,7 @@ export function CoreProblem() {
         </div>
       </div>
 
-      <div className="relative mt-8 overflow-hidden rounded-2xl border border-slate-700/80 p-2 md:rounded-3xl md:p-3">
+      <div className="relative mt-8 overflow-hidden rounded-2xl border border-amber-700/30 p-2 md:rounded-3xl md:p-3">
         <GlowingEffect
           blur={0}
           borderWidth={3}
@@ -78,13 +78,13 @@ export function CoreProblem() {
           disabled={false}
           proximity={80}
           inactiveZone={0.01}
-          variant="indigo"
+          variant="amber"
         />
         <div className="relative flex items-center justify-between gap-6 rounded-xl bg-slate-800/95 px-5 py-5 shadow-[0px_0px_27px_0px_rgba(15,23,42,0.4)] md:px-8 md:py-6">
           <p className="text-lg font-semibold leading-snug text-white md:text-xl">
             {SECTION_COPY.problemBlockquote}
           </p>
-          <span className="hidden shrink-0 rounded-full bg-indigo-500/20 px-3 py-1.5 text-sm font-medium text-indigo-300 md:inline-block">
+          <span className="hidden shrink-0 rounded-full bg-amber-500/20 px-3 py-1.5 text-sm font-medium text-amber-400 md:inline-block">
             30 days
           </span>
         </div>

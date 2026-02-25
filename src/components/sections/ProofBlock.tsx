@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { Section } from "@/components/Section"
 import { CountUp } from "@/components/motion/CountUp"
 import { GlowingEffect } from "@/components/ui/glowing-effect"
@@ -9,17 +10,15 @@ const PROOF_STATS = [
   { value: <CountUp to={12} suffix="" />, label: "Mocks in 30 days" },
 ] as const
 
-const logos = ["Google", "Amazon", "Microsoft", "Stripe"]
-
 export function ProofBlock() {
   return (
     <Section
       id="proof"
       label="Proof"
-      backgroundClassName="bg-linear-to-b from-slate-900 to-slate-800"
       ambientOrbs={[{ position: "left" }, { position: "right", delay: true }]}
       motionVariant="fade-up"
       staggerChildren
+      spacing="default"
     >
       <h2 className="text-display text-2xl font-bold text-white md:text-3xl">
         Real results
@@ -29,7 +28,7 @@ export function ProofBlock() {
         {PROOF_STATS.map((stat) => (
           <div
             key={stat.label}
-            className="relative overflow-hidden rounded-xl border border-indigo-700/50 p-2 md:rounded-2xl md:p-2"
+            className="relative overflow-hidden rounded-xl border border-amber-700/40 p-2 md:rounded-2xl md:p-2"
           >
             <GlowingEffect
               blur={0}
@@ -39,9 +38,9 @@ export function ProofBlock() {
               disabled={false}
               proximity={48}
               inactiveZone={0.05}
-              variant="indigo"
+              variant="amber"
             />
-            <div className="relative rounded-lg border-0 bg-linear-to-br from-slate-800 to-indigo-950/40 px-4 py-5 text-center shadow-[0px_0px_20px_0px_rgba(15,23,42,0.25)] md:px-6 md:py-6">
+            <div className="relative rounded-lg border-0 bg-linear-to-br from-slate-800 to-amber-950/30 px-4 py-5 text-center shadow-[0px_0px_20px_0px_rgba(15,23,42,0.25)] md:px-6 md:py-6">
               <p className="text-3xl font-bold text-white md:text-4xl">{stat.value}</p>
               <p className="mt-1 text-xs font-medium uppercase tracking-wider text-slate-400">
                 {stat.label}
@@ -51,11 +50,11 @@ export function ProofBlock() {
         ))}
       </div>
 
-      <blockquote className="mt-10 rounded-2xl border border-indigo-700 bg-linear-to-br from-slate-800 to-indigo-950/50 p-6 text-center md:p-8">
+      <blockquote className="mt-10 rounded-2xl border border-amber-700/40 bg-linear-to-br from-slate-800 to-amber-950/20 p-6 text-center md:p-8">
         <p className="text-xl font-semibold leading-relaxed text-white md:text-2xl">
           &ldquo;{STANDOUT_QUOTE.quote}&rdquo;
         </p>
-        <footer className="mt-3 text-sm font-medium uppercase tracking-wider text-indigo-300">
+        <footer className="mt-3 text-sm font-medium uppercase tracking-wider text-amber-400/90">
           {STANDOUT_QUOTE.attribution}
         </footer>
       </blockquote>
@@ -74,7 +73,7 @@ export function ProofBlock() {
               disabled={false}
               proximity={56}
               inactiveZone={0.03}
-              variant="indigo"
+              variant="amber"
             />
             <article className="relative rounded-lg border-0 bg-slate-800 p-5 shadow-[0px_0px_20px_0px_rgba(15,23,42,0.25)] md:p-5">
               <p className="text-base leading-relaxed text-slate-300 md:text-lg">
@@ -90,13 +89,22 @@ export function ProofBlock() {
       <p className="mt-10 text-sm font-medium uppercase tracking-[0.12em] text-slate-400">
         {SECTION_COPY.logoStripLabel}
       </p>
-      <div className="mt-4 flex flex-wrap gap-3 text-sm text-slate-400">
-        {logos.map((logo) => (
+      <div className="mt-4 flex flex-wrap items-center gap-4">
+        <div className="flex h-10 items-center rounded-lg border border-amber-600/40 bg-slate-800/80 px-4">
+          <Image
+            src="/infrathrone.svg"
+            alt="InfraThrone"
+            width={120}
+            height={32}
+            className="h-6 w-auto brightness-0 invert opacity-70"
+          />
+        </div>
+        {["Google", "Amazon", "Microsoft", "Stripe"].map((name) => (
           <span
-            key={logo}
-            className="rounded-lg border border-slate-700 bg-slate-800 px-3 py-2"
+            key={name}
+            className="flex h-10 items-center rounded-lg border border-slate-600/80 bg-slate-800/80 px-4 text-sm font-semibold tracking-wide text-slate-400"
           >
-            {logo}
+            {name}
           </span>
         ))}
       </div>

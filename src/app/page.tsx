@@ -18,7 +18,7 @@ export default function HomePage() {
     <main className="min-h-screen text-slate-100 overflow-x-hidden">
       <UrgencyBanner />
       <Hero />
-      <StickyCta label={SITE_CONFIG.ctaText} />
+      <StickyCta label={SITE_CONFIG.ctaText} link={SITE_CONFIG.ctaLink} />
       <WhoThisIsFor />
       <CoreProblem />
       <ThirtyDayBreakdown />
@@ -30,5 +30,5 @@ export default function HomePage() {
       <FAQSection />
       <FooterCta />
     </main>
-  )
+  );
 }

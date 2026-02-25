@@ -19,15 +19,15 @@ export function WhatMakesDifferent() {
     <Section
       id="different"
       label="Differentiator"
-      backgroundClassName="bg-slate-900"
       ambientOrbs={[{ position: "top-right" }]}
       motionVariant="slide-in"
       staggerChildren
+      spacing="default"
     >
       <h2 className="text-display text-2xl font-bold text-white md:text-3xl">
         Not just mocks
       </h2>
-      <div className="relative mt-8 overflow-hidden rounded-2xl border border-slate-700/80 p-2 md:rounded-3xl md:p-3">
+      <div className="relative mt-8 overflow-hidden rounded-2xl border border-amber-700/30 p-2 md:rounded-3xl md:p-3">
         <GlowingEffect
           blur={0}
           borderWidth={2}
@@ -36,7 +36,7 @@ export function WhatMakesDifferent() {
           disabled={false}
           proximity={72}
           inactiveZone={0.01}
-          variant="indigo"
+          variant="amber"
         />
       <div className="relative overflow-hidden rounded-xl border-0 bg-slate-800/95 shadow-[0px_0px_20px_0px_rgba(15,23,42,0.25)]">
         <div className="grid grid-cols-1 gap-0 md:grid-cols-2">
@@ -45,8 +45,8 @@ export function WhatMakesDifferent() {
               Others do
             </h3>
           </div>
-          <div className="border-b border-slate-700 bg-slate-800 px-6 py-4 md:border-b-0 md:border-l md:border-slate-600/50">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-indigo-300">
+          <div className="border-b border-slate-700 bg-slate-800 px-6 py-4 md:border-b-0 md:border-l md:border-amber-700/30">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-amber-400/90">
               We deliver
             </h3>
           </div>
@@ -68,8 +68,8 @@ export function WhatMakesDifferent() {
                 <span className="text-slate-600">—</span>
               )}
             </div>
-            <div className="flex items-center gap-3 border-slate-700 bg-slate-800/90 px-6 py-3 md:border-l md:border-slate-600/30">
-              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-indigo-600/80">
+            <div className="flex items-center gap-3 border-slate-700 bg-slate-800/90 px-6 py-3 md:border-l md:border-amber-700/20">
+              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-amber-600/80">
                 <Check className="h-3.5 w-3.5 text-white" />
               </span>
               <span className="text-slate-200">{row.weDeliver}</span>

@@ -14,11 +14,25 @@ const ORB_POSITION_CLASSES: Record<
   right: "absolute top-1/2 right-12 md:right-24 h-48 w-48 -translate-y-1/2",
 }
 
-export type AmbientOrbPosition = keyof typeof ORB_POSITION_CLASSES
+type AmbientOrbPosition = keyof typeof ORB_POSITION_CLASSES
 
 type AmbientOrbConfig = {
   position: AmbientOrbPosition
   delay?: boolean
+}
+
+type SectionVariant = "default" | "warm" | "accent"
+
+const ORB_COLORS: Record<SectionVariant, [string, string]> = {
+  default: ["bg-indigo-300/10", "bg-violet-300/8"],
+  warm: ["bg-amber-300/8", "bg-orange-300/6"],
+  accent: ["bg-amber-400/10", "bg-orange-400/8"],
+}
+
+const SPACING_CLASSES: Record<"compact" | "default" | "large", string> = {
+  compact: "py-12 md:py-16",
+  default: "py-16 md:py-20",
+  large: "py-20 md:py-24",
 }
 
 type SectionProps = {
@@ -26,13 +40,16 @@ type SectionProps = {
   className?: string
   children: React.ReactNode
   noBorder?: boolean
+  showDivider?: boolean
   backgroundClassName?: string
   label?: string
   motionVariant?: "fade-up" | "scale-in" | "slide-in"
   staggerChildren?: boolean
   ambientOrbs?: AmbientOrbConfig[]
-  /** Rendered at the section level (behind content, above orbs). */
   backgroundOverlay?: React.ReactNode
+  variant?: SectionVariant
+  spacing?: "compact" | "default" | "large"
+  seamless?: boolean
 }
 
 export function Section({
@@ -40,30 +57,49 @@ export function Section({
   className,
   children,
   noBorder = false,
+  showDivider = false,
   backgroundClassName,
   label,
   motionVariant = "fade-up",
   staggerChildren = false,
   ambientOrbs,
   backgroundOverlay,
+  variant = "default",
+  spacing = "default",
+  seamless = true,
 }: SectionProps) {
   const hasOrbs = ambientOrbs != null && ambientOrbs.length > 0
+  const orbColors = ORB_COLORS[variant]
+
+  const variantBg =
+    !seamless && (variant === "warm" || variant === "accent")
+      ? "section-warm"
+      : undefined
+
+  const bgClass = backgroundClassName ?? (seamless ? "bg-transparent" : variantBg)
+  const paddingClass = SPACING_CLASSES[spacing]
 
   return (
     <section
       id={id}
       className={cn(
-        backgroundClassName,
+        bgClass,
         (hasOrbs || backgroundOverlay) && "relative overflow-hidden",
-        noBorder ? "" : "border-t border-slate-700/60",
+        !noBorder && showDivider && "relative",
         className
       )}
     >
+      {showDivider && (
+        <div
+          aria-hidden
+          className="absolute left-0 right-0 top-0 h-px bg-linear-to-r from-transparent via-slate-600/40 to-transparent"
+        />
+      )}
       {backgroundOverlay}
       {hasOrbs && (
         <div aria-hidden className="pointer-events-none absolute inset-0">
           {ambientOrbs.map((orb, i) => {
-            const orbColor = i % 2 === 0 ? "bg-indigo-300/20" : "bg-violet-300/20"
+            const orbColor = i % 2 === 0 ? orbColors[0] : orbColors[1]
             return (
               <div
                 key={orb.position + "-" + i}
@@ -78,12 +114,16 @@ export function Section({
           })}
         </div>
       )}
-      <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-8 lg:px-12 py-20 md:py-24">
+      <div
+        className={cn(
+          "relative z-10 mx-auto max-w-6xl px-6 md:px-8 lg:px-12",
+          paddingClass
+        )}
+      >
         <AnimatedSection variant={motionVariant} staggerChildren={staggerChildren}>
           {label ? (
             <div className="mb-6 flex items-center gap-3">
-              <span className="h-px w-8 bg-indigo-500/60" aria-hidden />
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
                 {label}
               </p>
             </div>

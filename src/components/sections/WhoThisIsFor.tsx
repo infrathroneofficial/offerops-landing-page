@@ -37,7 +37,7 @@ function WhoThisIsForGridItem({
         <div className="relative flex h-full flex-col justify-between gap-4 overflow-hidden rounded-xl border-0 bg-slate-800/95 p-5 shadow-[0px_0px_27px_0px_rgba(15,23,42,0.4)] md:p-6">
           <div className="flex flex-1 flex-col justify-between gap-3">
             <div className="w-fit rounded-lg border border-slate-600 bg-slate-700/50 p-2">
-              <ArrowRight className="h-4 w-4 text-indigo-400 md:h-5 md:w-5" />
+              <ArrowRight className="h-4 w-4 text-amber-400 md:h-5 md:w-5" />
             </div>
             <p className="font-sans text-base font-medium leading-relaxed text-white text-balance md:text-lg md:font-semibold">
               {children}
@@ -54,10 +54,10 @@ export function WhoThisIsFor() {
     <Section
       id="who"
       label="Who it's for"
-      backgroundClassName="bg-slate-900"
       ambientOrbs={[{ position: "top-right" }]}
       motionVariant="slide-in"
       staggerChildren
+      spacing="default"
     >
       <h2 className="text-display text-2xl font-bold text-white md:text-3xl">
         {SECTION_COPY.whoHeadline}

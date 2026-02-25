@@ -9,7 +9,7 @@ interface GlowingEffectProps {
   inactiveZone?: number;
   proximity?: number;
   spread?: number;
-  variant?: "default" | "white" | "indigo";
+  variant?: "default" | "white" | "indigo" | "amber";
   glow?: boolean;
   className?: string;
   disabled?: boolean;
@@ -28,6 +28,19 @@ const INDIGO_GRADIENT = `radial-gradient(circle, #6366f1 10%, #6366f100 20%),
     #8b5cf6 calc(50% / var(--repeating-conic-gradient-times)),
     #4f46e5 calc(75% / var(--repeating-conic-gradient-times)),
     #6366f1 calc(100% / var(--repeating-conic-gradient-times))
+  )`;
+
+const AMBER_GRADIENT = `radial-gradient(circle, #f59e0b 10%, #f59e0b00 20%),
+  radial-gradient(circle at 40% 40%, #fbbf24 5%, #fbbf2400 15%),
+  radial-gradient(circle at 60% 60%, #d97706 10%, #d9770600 20%),
+  radial-gradient(circle at 40% 60%, #b45309 10%, #b4530900 20%),
+  repeating-conic-gradient(
+    from 236.84deg at 50% 50%,
+    #f59e0b 0%,
+    #fbbf24 calc(25% / var(--repeating-conic-gradient-times)),
+    #d97706 calc(50% / var(--repeating-conic-gradient-times)),
+    #b45309 calc(75% / var(--repeating-conic-gradient-times)),
+    #f59e0b calc(100% / var(--repeating-conic-gradient-times))
   )`;
 
 const DEFAULT_GRADIENT = `radial-gradient(circle, #dd7bbb 10%, #dd7bbb00 20%),
@@ -153,7 +166,9 @@ const GlowingEffect = memo(
           )`
         : variant === "indigo"
           ? INDIGO_GRADIENT
-          : DEFAULT_GRADIENT;
+          : variant === "amber"
+            ? AMBER_GRADIENT
+            : DEFAULT_GRADIENT;
 
     return (
       <>

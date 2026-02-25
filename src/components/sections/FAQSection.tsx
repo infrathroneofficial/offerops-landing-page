@@ -13,9 +13,9 @@ export function FAQSection() {
     <Section
       id="faq"
       label="FAQ"
-      backgroundClassName="bg-slate-900"
       ambientOrbs={[{ position: "bottom-left" }]}
       motionVariant="fade-up"
+      spacing="default"
     >
       <h2 className="text-display text-2xl font-bold text-white md:text-3xl">
         Frequently asked questions
@@ -40,8 +40,8 @@ export function FAQSection() {
                 <span className="font-semibold text-white">{item.question}</span>
                 <ChevronDown
                   className={cn(
-                    "h-5 w-5 shrink-0 text-slate-400 transition-transform duration-200",
-                    isOpen && "rotate-180"
+                    "h-5 w-5 shrink-0 transition-all duration-200",
+                    isOpen ? "rotate-180 text-amber-400" : "text-slate-400"
                   )}
                 />
               </button>
