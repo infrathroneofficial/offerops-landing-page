@@ -1,8 +1,8 @@
-import { CountdownTimer } from "@/components/CountdownTimer"
-import { Section } from "@/components/Section"
-import { WaitlistForm } from "@/components/WaitlistForm"
-import { SITE_CONFIG } from "@/config/site"
-import { Button } from "../ui/button";
+import { CountdownTimer } from "@/components/CountdownTimer";
+import { Section } from "@/components/Section";
+import { Button } from "@/components/ui/button";
+import { SITE_CONFIG } from "@/config/site";
+import Image from "next/image";
 
 export function FooterCta() {
   return (
@@ -24,6 +24,18 @@ export function FooterCta() {
       />
 
       <footer className="relative z-10">
+        <div className="mb-6 flex items-center gap-2">
+          <span className="text-xs font-medium uppercase tracking-wider text-slate-500">
+            Powered by
+          </span>
+          <Image
+            src="/infrathrone-yellow.png"
+            alt="InfraThrone"
+            width={240}
+            height={64}
+            className="h-14 w-auto opacity-80 md:h-16"
+          />
+        </div>
         <h2 className="text-display text-2xl font-bold leading-tight text-white md:text-3xl lg:text-4xl">
           Knowledge gets interviews. Production stories get offers.
         </h2>

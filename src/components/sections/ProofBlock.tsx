@@ -1,14 +1,14 @@
-import Image from "next/image"
-import { Section } from "@/components/Section"
-import { CountUp } from "@/components/motion/CountUp"
-import { GlowingEffect } from "@/components/ui/glowing-effect"
-import { SECTION_COPY, STANDOUT_QUOTE, TESTIMONIALS } from "@/config/site"
+import { Section } from "@/components/Section";
+import { CountUp } from "@/components/motion/CountUp";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
+import { SECTION_COPY, STANDOUT_QUOTE, TESTIMONIALS } from "@/config/site";
+import Image from "next/image";
 
 const PROOF_STATS = [
   { value: <CountUp to={4} suffix="x" />, label: "More callbacks" },
   { value: "20–70%", label: "Salary jump" },
   { value: <CountUp to={12} suffix="" />, label: "Mocks in 30 days" },
-] as const
+] as const;
 
 export function ProofBlock() {
   return (
@@ -41,7 +41,9 @@ export function ProofBlock() {
               variant="amber"
             />
             <div className="relative rounded-lg border-0 bg-linear-to-br from-slate-800 to-amber-950/30 px-4 py-5 text-center shadow-[0px_0px_20px_0px_rgba(15,23,42,0.25)] md:px-6 md:py-6">
-              <p className="text-3xl font-bold text-white md:text-4xl">{stat.value}</p>
+              <p className="text-3xl font-bold text-white md:text-4xl">
+                {stat.value}
+              </p>
               <p className="mt-1 text-xs font-medium uppercase tracking-wider text-slate-400">
                 {stat.label}
               </p>
@@ -79,7 +81,9 @@ export function ProofBlock() {
               <p className="text-base leading-relaxed text-slate-300 md:text-lg">
                 &ldquo;{testimonial.quote}&rdquo;
               </p>
-              <p className="mt-3 text-sm font-semibold text-white">{testimonial.name}</p>
+              <p className="mt-3 text-sm font-semibold text-white">
+                {testimonial.name}
+              </p>
               <p className="text-sm text-slate-400">{testimonial.role}</p>
             </article>
           </div>
@@ -92,11 +96,11 @@ export function ProofBlock() {
       <div className="mt-4 flex flex-wrap items-center gap-4">
         <div className="flex h-10 items-center rounded-lg border border-amber-600/40 bg-slate-800/80 px-4">
           <Image
-            src="/infrathrone.svg"
+            src="/infrathrone-yellow.png"
             alt="InfraThrone"
             width={120}
             height={32}
-            className="h-6 w-auto brightness-0 invert opacity-70"
+            className="h-6 w-auto opacity-70"
           />
         </div>
         {["Google", "Amazon", "Microsoft", "Stripe"].map((name) => (
@@ -109,5 +113,5 @@ export function ProofBlock() {
         ))}
       </div>
     </Section>
-  )
+  );
 }
