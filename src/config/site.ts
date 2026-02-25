@@ -1,5 +1,8 @@
+const siteUrl = "https://offerops.infrathrone.xyz";
+
 export const SITE_CONFIG = {
   name: "OfferOps",
+  siteUrl,
   cohortDate: "March 2026",
   cohortStartDate: "2026-03-02T00:00:00Z",
   urgencyBadge: "Only 15 seats",
@@ -31,8 +34,7 @@ export const HERO_METRICS = {
 export const SECTION_COPY = {
   whoTitle: "Who it's for",
   whoHeadline: "You're getting callbacks but dying in finals",
-  whoTagline:
-    "The War Room is built for engineers like you.",
+  whoTagline: "The War Room is built for engineers like you.",
   problemTitle: "Why great engineers still get rejected",
   problemBlockquote: "We fix exactly that - in 30 days.",
   outcomeHeadline: "In 30 days you walk out with:",

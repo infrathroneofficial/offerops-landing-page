@@ -5,6 +5,7 @@ import { CountUp } from "@/components/motion/CountUp";
 import { Button } from "@/components/ui/button";
 import { HERO_METRICS, SITE_CONFIG } from "@/config/site";
 import { BarChart3, Target, Zap } from "lucide-react";
+import Image from "next/image";
 import type { ReactNode } from "react";
 
 const HERO_PILLS = [
@@ -34,7 +35,17 @@ export function Hero() {
       />
 
       <header className="relative z-10 mx-auto text-center">
-        <span className="inline-block rounded-full border border-indigo-500/50 bg-indigo-950/60 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-indigo-300">
+        <div className="flex justify-center">
+          <Image
+            src="/infrathrone-yellow.png"
+            alt="InfraThrone"
+            width={5600}
+            height={1600}
+            className="h-24 w-auto opacity-90 md:h-28"
+            priority
+          />
+        </div>
+        <span className="mt-6 inline-block rounded-full border border-indigo-500/50 bg-indigo-950/60 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-indigo-300">
           {SITE_CONFIG.heroBadge}
         </span>
         <h1 className="mt-6 text-display text-4xl font-bold leading-[1.1] tracking-tight text-white text-balance md:text-6xl lg:text-7xl">
