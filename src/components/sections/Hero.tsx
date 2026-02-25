@@ -91,7 +91,7 @@ export function Hero() {
         </div>
         <div className="mt-6 flex flex-col items-center gap-2">
           <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-            Next cohort starts in
+            Early Bird Discount ends in
           </p>
           <CountdownTimer targetDate={SITE_CONFIG.cohortStartDate} />
         </div>
