@@ -15,7 +15,7 @@ import { SITE_CONFIG } from "@/config/site"
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen text-slate-100 overflow-x-hidden">
+    <main className="min-h-screen pt-20 text-slate-100 overflow-x-hidden sm:pt-14">
       <UrgencyBanner />
       <Hero />
       <StickyCta label={SITE_CONFIG.ctaText} link={SITE_CONFIG.ctaLink} />
