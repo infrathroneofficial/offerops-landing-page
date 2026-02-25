@@ -22,8 +22,8 @@ function WhoThisIsForGridItem({
   children: React.ReactNode;
 }) {
   return (
-    <li className={`min-h-48 list-none md:min-h-56 ${area}`}>
-      <div className="relative h-full rounded-2xl border border-slate-700/80 p-2 md:rounded-3xl md:p-3">
+    <li className={`min-h-0 list-none md:min-h-56 ${area}`}>
+      <div className="relative h-full rounded-2xl border border-slate-700/80 p-1.5 md:rounded-3xl md:p-3">
         <GlowingEffect
           blur={0}
           borderWidth={3}
@@ -34,12 +34,12 @@ function WhoThisIsForGridItem({
           inactiveZone={0.01}
           variant="indigo"
         />
-        <div className="relative flex h-full flex-col justify-between gap-4 overflow-hidden rounded-xl border-0 bg-slate-800/95 p-5 shadow-[0px_0px_27px_0px_rgba(15,23,42,0.4)] md:p-6">
-          <div className="flex flex-1 flex-col justify-between gap-3">
-            <div className="w-fit rounded-lg border border-slate-600 bg-slate-700/50 p-2">
+        <div className="relative flex h-full overflow-hidden rounded-xl border-0 bg-slate-800/95 p-3 shadow-[0px_0px_27px_0px_rgba(15,23,42,0.4)] md:flex-col md:justify-between md:gap-4 md:p-6">
+          <div className="flex min-w-0 flex-1 items-start gap-1.5 md:flex-col md:justify-between md:gap-3">
+            <div className="flex shrink-0 items-start rounded-lg border border-slate-600 bg-slate-700/50 p-1.5 md:p-2">
               <ArrowRight className="h-4 w-4 text-amber-400 md:h-5 md:w-5" />
             </div>
-            <p className="font-sans text-base font-medium leading-relaxed text-white text-balance md:text-lg md:font-semibold">
+            <p className="min-w-0 flex-1 font-sans text-sm font-medium leading-snug text-white text-balance md:text-lg md:leading-relaxed md:font-semibold">
               {children}
             </p>
           </div>
@@ -65,7 +65,7 @@ export function WhoThisIsFor() {
       <p className="mt-3 text-base leading-relaxed text-slate-400 md:text-lg">
         {SECTION_COPY.whoTagline}
       </p>
-      <ul className="mt-8 grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 xl:max-h-144 xl:grid-rows-2">
+      <ul className="mt-8 grid grid-cols-1 grid-rows-none gap-3 md:grid-cols-12 md:grid-rows-3 md:gap-4 xl:max-h-144 xl:grid-rows-2">
         {WHO_THIS_IS_FOR.map((item, index) => (
           <WhoThisIsForGridItem key={item} area={GRID_AREAS[index]}>
             {item}
