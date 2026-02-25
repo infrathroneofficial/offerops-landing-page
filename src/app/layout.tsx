@@ -48,7 +48,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: "InfraThrone – OfferOps: 30-day DevOps Interview War Room",
-        type: "image/svg+xml",
+        type: "image/png",
       },
     ],
   },
