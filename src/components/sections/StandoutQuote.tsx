@@ -7,11 +7,11 @@ export function StandoutQuote() {
     <Section
       id="participant-quote"
       noBorder
-      backgroundClassName="bg-slate-900"
       motionVariant="scale-in"
-      className="border-none py-10 md:py-14"
+      spacing="compact"
+      className="border-none"
     >
-      <div className="relative mx-auto max-w-3xl overflow-hidden rounded-2xl border border-indigo-700/80 p-2 md:rounded-3xl md:p-3">
+      <div className="relative mx-auto max-w-3xl overflow-hidden rounded-2xl border border-amber-700/40 p-2 md:rounded-3xl md:p-3">
         <GlowingEffect
           blur={0}
           borderWidth={2}
@@ -20,7 +20,7 @@ export function StandoutQuote() {
           disabled={false}
           proximity={48}
           inactiveZone={0.02}
-          variant="indigo"
+          variant="amber"
         />
         <blockquote className="relative rounded-xl bg-slate-800/95 px-6 py-8 text-center md:px-10 md:py-10">
           <p className="text-xl font-semibold leading-relaxed text-white md:text-2xl lg:text-3xl">

@@ -27,7 +27,7 @@ export function ThirtyDayBreakdown() {
                 key={bullet}
                 className="flex items-start gap-2 text-sm leading-relaxed text-slate-300 md:text-base"
               >
-                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-400" />
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-400" />
                 {bullet}
               </li>
             ))}
@@ -41,13 +41,13 @@ export function ThirtyDayBreakdown() {
     <Section
       id="breakdown"
       label="Curriculum"
-      backgroundClassName="bg-linear-to-b from-slate-900 to-slate-800/90"
       ambientOrbs={[
         { position: "top-left" },
         { position: "bottom-right", delay: true },
       ]}
       motionVariant="fade-up"
       staggerChildren
+      spacing="default"
     >
       <h2 className="text-display text-2xl font-bold text-white md:text-3xl">
         30-Day War Room

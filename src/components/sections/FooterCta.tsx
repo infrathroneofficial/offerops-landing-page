@@ -1,3 +1,4 @@
+import { CountdownTimer } from "@/components/CountdownTimer"
 import { Section } from "@/components/Section"
 import { WaitlistForm } from "@/components/WaitlistForm"
 import { SITE_CONFIG } from "@/config/site"
@@ -7,17 +8,18 @@ export function FooterCta() {
     <Section
       id="cta"
       noBorder
-      backgroundClassName="relative overflow-hidden bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950 text-white"
+      backgroundClassName="relative overflow-hidden bg-gradient-to-b from-transparent via-slate-900/30 to-slate-950 text-white"
       className="border-none"
       motionVariant="scale-in"
+      spacing="large"
     >
       <div
         aria-hidden
-        className="ambient-orb absolute -left-16 -top-16 h-48 w-48 rounded-full bg-indigo-400/20 blur-3xl"
+        className="ambient-orb absolute -left-16 -top-16 h-48 w-48 rounded-full bg-amber-400/15 blur-3xl"
       />
       <div
         aria-hidden
-        className="ambient-orb ambient-orb-delay absolute -right-20 bottom-0 h-56 w-56 rounded-full bg-violet-400/20 blur-3xl"
+        className="ambient-orb ambient-orb-delay absolute -right-20 bottom-0 h-56 w-56 rounded-full bg-indigo-400/20 blur-3xl"
       />
 
       <footer className="relative z-10">
@@ -28,10 +30,15 @@ export function FooterCta() {
           {SITE_CONFIG.footerCtaSubtext}
         </p>
         <p className="mt-2 text-sm text-slate-400">{SITE_CONFIG.footerCtaOptionalLine}</p>
-        <p className="mt-6 text-sm font-medium text-amber-400/90">
-          {SITE_CONFIG.seatsRemaining}
-        </p>
-        <div className="mt-4 w-full max-w-xl">
+
+        <div className="mt-6 flex flex-col items-start gap-2">
+          <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+            Cohort starts in
+          </p>
+          <CountdownTimer targetDate={SITE_CONFIG.cohortStartDate} />
+        </div>
+
+        <div className="mt-6 w-full max-w-xl">
           <WaitlistForm
             buttonLabel={SITE_CONFIG.ctaText}
             variant="footer"

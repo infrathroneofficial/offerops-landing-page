@@ -1,23 +1,25 @@
 export const SITE_CONFIG = {
   name: "OfferOps",
   cohortDate: "March 2026",
-  cohortStartDate: "2026-03-01T00:00:00",
-  urgencyBadge: "Limited seats",
+  cohortStartDate: "2026-03-02T00:00:00Z",
+  urgencyBadge: "Only 15 seats",
+  cohortSize: 15,
   title: "OfferOps - Production stories get offers",
   description:
     "12 mocks. Real client exposure. Resume that converts. A 30-day DevOps Interview War Room to clear final rounds with confidence.",
   ctaText: "Reserve my seat",
+  ctaLink: "https://topmate.io/saurav_chaudhary_1/1966594",
   heroBadge: "30-day War Room",
   heroSubtext: "12 mocks. Real client exposure. Resume that converts.",
   heroEmpathy:
     "You know the tech. We help you tell the story that gets the offer.",
   heroConfidence:
     "Stop guessing what interviewers want. Ship stories that close the loop.",
-  footerCtaSubtext: "Limited seats - March 2026",
+  footerCtaSubtext: "Only 15 seats — March 2026",
   footerCtaOptionalLine: "Reserve your seat for the next 30-day run.",
   formReassurance:
     "No spam. We'll only email about the next cohort and how to apply.",
-  seatsRemaining: "Limited seats for March 2026",
+  seatsRemaining: "Only 15 seats — March 2026 cohort",
 } as const;
 
 export const HERO_METRICS = {
@@ -140,16 +142,28 @@ export const STANDOUT_QUOTE = {
 } as const;
 
 export const INSTRUCTOR = {
-  name: "OfferOps War Room Team",
+  name: "Saurav Chaudhary",
+  title: "War Room Architect",
+  imageUrl: "/SauravChaudhary.jpeg",
   tagline:
-    "Mentors who have run real production systems and train you to communicate impact, trade-offs, and decisions clearly.",
+    "Leads InfraThrone's strategy, curriculum, and consulting. Has scaled infra for fast-growing startups and built teams that thrive under pressure.",
   stats: ["Production systems", "Interview coaching", "Resume & storytelling"],
-  skills: ["Interview coaching", "Production stories", "Resume optimization", "STAR/RCA framing"],
+  skills: [
+    "Interview coaching",
+    "Production stories",
+    "Resume optimization",
+    "STAR/RCA framing",
+  ],
   victories: [
     "Trained engineers who cleared final rounds",
     "Resume and LinkedIn optimization at scale",
     "Real client exposure integration",
   ],
+  socials: {
+    linkedin: "https://www.linkedin.com/in/sauravstwt/",
+    topmate: "https://topmate.io/saurav_chaudhary_1",
+    twitter: "https://x.com/sauravstwt",
+  },
 } as const;
 
 export const FAQ_ITEMS = [

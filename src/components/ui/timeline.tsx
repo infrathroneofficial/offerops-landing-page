@@ -3,7 +3,7 @@
 import { useScroll, useTransform, motion } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
 
-export interface TimelineEntry {
+interface TimelineEntry {
   title: string;
   content: React.ReactNode;
 }
@@ -60,8 +60,8 @@ export function Timeline({
           >
             <div className="sticky z-40 flex max-w-xs flex-col self-start md:top-32 md:w-full md:flex-row md:items-center lg:max-w-sm">
               <div className="absolute left-3 flex h-10 w-10 items-center justify-center md:left-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 ring-2 ring-slate-700">
-                  <div className="h-3 w-3 rounded-full bg-slate-600 ring-1 ring-slate-500" />
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 ring-2 ring-amber-600/50">
+                  <div className="h-3 w-3 rounded-full bg-amber-500/80 ring-1 ring-amber-500/50" />
                 </div>
               </div>
               <h3 className="hidden pl-20 text-xl font-bold text-slate-400 md:block md:pl-20 md:text-3xl lg:text-4xl">
@@ -86,7 +86,7 @@ export function Timeline({
               height: heightTransform,
               opacity: opacityTransform,
             }}
-            className="absolute inset-x-0 top-0 w-[2px] rounded-full bg-linear-to-t from-indigo-500 via-violet-500 to-transparent"
+            className="absolute inset-x-0 top-0 w-[2px] rounded-full bg-linear-to-t from-amber-500 via-indigo-500 to-transparent"
           />
         </div>
       </div>

@@ -90,9 +90,9 @@
   body {
     @apply bg-slate-950 text-slate-100;
     background-image:
-      radial-gradient(circle at 15% -5%, rgb(99 102 241 / 0.12), transparent 40%),
-      radial-gradient(circle at 88% 8%, rgb(139 92 246 / 0.1), transparent 35%),
-      linear-gradient(to bottom, #0f172a, #020617);
+      radial-gradient(circle at 15% -5%, rgb(99 102 241 / 0.08), transparent 40%),
+      radial-gradient(circle at 88% 8%, rgb(245 158 11 / 0.04), transparent 35%),
+      linear-gradient(180deg, #0f172a 0%, #0c1222 30%, #0a0f1a 70%, #020617 100%);
     background-attachment: fixed;
   }
   h1,
@@ -106,6 +106,10 @@
     font-family: var(--font-heading), var(--font-sans), sans-serif;
     letter-spacing: -0.03em;
   }
+}
+
+.section-warm {
+  background: transparent;
 }
 
 /* Theme: primary accent for CTAs and focus (indigo) - dark mode only */

@@ -4,21 +4,22 @@ import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 
 type StickyCtaProps = {
-  label: string
-}
+  label: string;
+  link: string;
+};
 
-export function StickyCta({ label }: StickyCtaProps) {
-  const [visible, setVisible] = useState(false)
+export function StickyCta({ label, link }: StickyCtaProps) {
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
-      setVisible(window.scrollY > 420)
-    }
+      setVisible(window.scrollY > 420);
+    };
 
-    onScroll()
-    window.addEventListener("scroll", onScroll, { passive: true })
-    return () => window.removeEventListener("scroll", onScroll)
-  }, [])
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <div
@@ -34,8 +35,10 @@ export function StickyCta({ label }: StickyCtaProps) {
         size="lg"
         className="cta-primary h-12 w-full rounded-xl text-sm font-semibold shadow-xl"
       >
-        <a href="#cta">{label}</a>
+        <a href={link} target="_blank" rel="noopener noreferrer">
+          {label}
+        </a>
       </Button>
     </div>
-  )
+  );
 }

@@ -1,3 +1,4 @@
+import { CountdownTimer } from "@/components/CountdownTimer";
 import { HeroAurora } from "@/components/HeroAurora";
 import { Section } from "@/components/Section";
 import { CountUp } from "@/components/motion/CountUp";
@@ -18,9 +19,9 @@ export function Hero() {
       id="hero"
       noBorder
       className="relative min-h-[92vh] flex items-center overflow-hidden"
-      backgroundClassName="bg-linear-to-b from-slate-950 via-slate-900/90 to-slate-800/80"
       motionVariant="scale-in"
       staggerChildren
+      spacing="large"
       backgroundOverlay={<HeroAurora />}
     >
       <div
@@ -79,12 +80,21 @@ export function Hero() {
             size="lg"
             className="cta-primary min-h-[52px] rounded-xl px-10 py-4 text-lg font-semibold"
           >
-            <a href="#cta">{SITE_CONFIG.ctaText}</a>
+            <a
+              href={SITE_CONFIG.ctaLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {SITE_CONFIG.ctaText}
+            </a>
           </Button>
         </div>
-        <p className="mt-5 text-sm text-slate-400">
-          30 days · Next cohort {SITE_CONFIG.cohortDate}
-        </p>
+        <div className="mt-6 flex flex-col items-center gap-2">
+          <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+            Next cohort starts in
+          </p>
+          <CountdownTimer targetDate={SITE_CONFIG.cohortStartDate} />
+        </div>
       </header>
     </Section>
   );

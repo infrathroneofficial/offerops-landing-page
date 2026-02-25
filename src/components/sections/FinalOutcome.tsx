@@ -50,17 +50,17 @@ function OutcomeCard({
       )}
     >
       {index < 4 && (
-        <div className="pointer-events-none absolute inset-0 h-full w-full bg-linear-to-t from-indigo-950/50 to-transparent opacity-0 transition-opacity duration-200 group-hover/feature:opacity-100" />
+        <div className="pointer-events-none absolute inset-0 h-full w-full bg-linear-to-t from-amber-950/40 to-transparent opacity-0 transition-opacity duration-200 group-hover/feature:opacity-100" />
       )}
       {index >= 4 && (
-        <div className="pointer-events-none absolute inset-0 h-full w-full bg-linear-to-b from-indigo-950/50 to-transparent opacity-0 transition-opacity duration-200 group-hover/feature:opacity-100" />
+        <div className="pointer-events-none absolute inset-0 h-full w-full bg-linear-to-b from-amber-950/40 to-transparent opacity-0 transition-opacity duration-200 group-hover/feature:opacity-100" />
       )}
-      <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-slate-600/80 bg-slate-800/80 text-slate-400 transition-colors group-hover/feature:text-indigo-400">
+      <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-slate-600/80 bg-slate-800/80 text-slate-400 transition-colors group-hover/feature:text-amber-400">
         <Icon className="h-5 w-5" />
       </div>
       <div className="relative z-10 mt-4">
-        <div className="absolute left-0 inset-y-0 h-5 w-1 rounded-tr-full rounded-br-full bg-slate-600 transition-all duration-200 group-hover/feature:h-7 group-hover/feature:bg-indigo-500 origin-center" />
-        <span className="inline-block pl-4 font-semibold text-white transition-transform duration-200 group-hover/feature:translate-x-1 group-hover/feature:text-indigo-200">
+        <div className="absolute left-0 inset-y-0 h-5 w-1 rounded-tr-full rounded-br-full bg-slate-600 transition-all duration-200 group-hover/feature:h-7 group-hover/feature:bg-amber-500 origin-center" />
+        <span className="inline-block pl-4 font-semibold text-white transition-transform duration-200 group-hover/feature:translate-x-1 group-hover/feature:text-amber-200">
           {title}
         </span>
       </div>
@@ -76,10 +76,10 @@ export function FinalOutcome() {
     <Section
       id="outcome"
       label="Outcome"
-      backgroundClassName="bg-linear-to-b from-slate-900/90 to-slate-800"
       ambientOrbs={[{ position: "top-right" }]}
       motionVariant="fade-up"
       staggerChildren
+      spacing="default"
     >
       <h2 className="text-display text-2xl font-bold text-white md:text-3xl">
         {SECTION_COPY.outcomeHeadline.split("30 days").map((part, i) => (
@@ -107,7 +107,9 @@ export function FinalOutcome() {
         size="lg"
         className="cta-primary mt-8 min-h-[48px] rounded-xl px-8 py-4 text-lg font-semibold"
       >
-        <a href="#cta">{SITE_CONFIG.ctaText}</a>
+        <a href={SITE_CONFIG.ctaLink} target="_blank" rel="noopener noreferrer">
+          {SITE_CONFIG.ctaText}
+        </a>
       </Button>
     </Section>
   );
