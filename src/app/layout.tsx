@@ -15,7 +15,7 @@ const sora = Sora({
   subsets: ["latin"],
 });
 
-const ogImageUrl = `${SITE_CONFIG.siteUrl}/infrathrone-yellow.png`;
+const ogImageUrl = "/infrathrone-yellow.png";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.siteUrl),

@@ -1,4 +1,4 @@
-const siteUrl = "https://offerops.infrathrone.xyz";
+const siteUrl = "/";
 
 export const SITE_CONFIG = {
   name: "OfferOps",
