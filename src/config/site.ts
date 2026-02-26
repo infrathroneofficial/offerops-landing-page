@@ -2,7 +2,7 @@ const siteUrl =
   typeof process.env.NEXT_PUBLIC_SITE_URL === "string" &&
   process.env.NEXT_PUBLIC_SITE_URL.length > 0
     ? process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, "")
-    : "https://offerops.infrathrone.com";
+    : "https://offerops.infrathrone.xyz";
 
 export const SITE_CONFIG = {
   name: "OfferOps",
